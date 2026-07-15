@@ -2,12 +2,16 @@
 
 #include <API.h>
 
+#include <cue/Util.hpp>
+
 #include <Geode/ui/Button.hpp>
 
 #define HIGHEST_Z cocos2d::CCScene::get()->getHighestChildZ() + 1
 
 #define AN_HORRIBLE_ID "enable"_spr
 static constexpr auto g_horribleID = AN_HORRIBLE_ID;
+
+namespace rng = geode::utils::random;
 
 namespace colors {
     inline constexpr cocos2d::ccColor3B red = {225, 75, 100};

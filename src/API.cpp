@@ -5,6 +5,8 @@
 using namespace geode::prelude;
 using namespace cw::notifs;
 
+namespace rng = utils::random;
+
 Sender::Sender(std::string id, std::string name, std::string icon) : m_id(std::move(id)), m_name(std::move(name)), m_icon(std::move(icon)) {};
 
 ZStringView Sender::getID() const noexcept {
@@ -76,7 +78,7 @@ std::span<const Notif::Button> Notif::getButtons() const noexcept {
 
 Result<const Sender*> NotifManager::getRandomSender() const noexcept {
     if (m_senders.empty()) return Err("No notification senders found");
-    return Ok(&m_senders[utils::random::generate(0, m_senders.size())]);
+    return Ok(&m_senders[rng::generate(0, m_senders.size())]);
 };
 
 void NotifManager::add(Notif notif) {
@@ -92,7 +94,7 @@ Result<const Notif*> NotifManager::getRandom() noexcept {
     if (m_notifs.empty()) return Err("No notifications found");
 
     auto it = m_notifs.begin();
-    std::advance(it, utils::random::generate(0, m_notifs.size()));
+    std::advance(it, rng::generate(0, m_notifs.size()));
 
     auto senderRes = getRandomSender();
     if (senderRes.isErr()) return senderRes.asErr();

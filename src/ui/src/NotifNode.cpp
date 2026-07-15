@@ -26,6 +26,9 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
     setContentHeight(getScaledContentHeight() + notifMsg->getScaledContentHeight());
 
     if (withBtns) {
+        m_maxTime = rng::generate(8.75f, 17.5f);
+        m_time = m_maxTime;
+
         auto btnContainerLayout = RowLayout::create()
                                       ->setGap(2.5f)
                                       ->setAutoScale(false)
@@ -42,7 +45,7 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
         btns.reserve(notif->getButtons().size());
         for (auto btn : notif->getButtons()) btns.push_back(btn);
 
-        utils::random::shuffle(btns);
+        rng::shuffle(btns);
 
         for (auto const& btn : btns) {
             auto btnNode = Button::createWithNode(
@@ -119,8 +122,7 @@ void NotifNode::update(float dt) {
         return unscheduleUpdate();
     };
 
-    if (m_time < 0.f) m_time = 0.f;
-    auto pct = (m_time / 8.75f) * 100.f;
+    auto pct = (m_time / m_maxTime) * 100.f;
 
     if (m_countdown) {
         m_countdown->updateProgress(pct);

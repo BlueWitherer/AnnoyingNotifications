@@ -12,7 +12,8 @@ private:
 
     geode::ProgressBar* m_countdown = nullptr;
 
-    float m_time = geode::utils::random::generate(8.75f, 17.5f);
+    float m_maxTime = 0.f;
+    float m_time = 0.f;
 
 protected:
     bool init(const cw::notifs::Notif* notif, bool withBtns);
