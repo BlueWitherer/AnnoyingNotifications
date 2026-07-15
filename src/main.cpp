@@ -242,18 +242,3 @@ $on_mod(Loaded) {
                     }));
     };
 };
-
-$on_game(Loaded) {
-    if (Loader::get()->isModLoaded("cubicstudios.horriblemenu")) {
-        auto const opt = OptionV2{
-            AN_HORRIBLE_ID,
-            "Notification Spam",
-            "Enable the annoying notification spam during gameplay.",
-            "Annoying Notifications",
-            SillyTier::High,
-            true,
-        };
-
-        OptionManagerV2::registerOption(opt);
-    };
-};

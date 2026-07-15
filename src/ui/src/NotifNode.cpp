@@ -12,7 +12,6 @@ using namespace cw::notifs;
 bool NotifNode::init(const Notif* notif, bool withBtns) {
     if (!CCNode::init()) return false;
 
-    setID(notif->getID());
     setAnchorPoint({0.5, 0.5});
     setContentSize({255.f, withBtns ? 82.5f : 70.f});
 

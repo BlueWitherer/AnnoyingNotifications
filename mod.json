@@ -46,7 +46,15 @@
             "type": "bool",
             "name": "Always On",
             "description": "Keep notifications always on outside of the level.",
-            "default": true
+            "default": false
+        },
+        "challenge-mode": {
+            "type": "bool",
+            "name": "Challenge Mode",
+            "description": "Add a notification feed that puts a time limit on how long you have left to actually respond to notifications.",
+            "default": true,
+            "enable-if": "!always-on",
+            "enable-if-description": "Persistent notifications must be disabled to use Challenge Mode."
         }
     },
     "early-load": false

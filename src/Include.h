@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ranges>
+
 #include <API.h>
 
 #include <cue/Util.hpp>
