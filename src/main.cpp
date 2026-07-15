@@ -8,11 +8,13 @@ using namespace geode::prelude;
 using namespace cw::notifs;
 using namespace horrible;
 
-// yeah big n shit script idk
+// yeah big ass source file
 $on_mod(Loaded) {
     if (auto nm = NotifManager::get()) {
+        nm->addSender(Sender::create("boo", "Boo", "boo.png"_spr));
         nm->addSender(Sender::create("durr", "durr", "durr.png"_spr));
         nm->addSender(Sender::create("evw", "Mr. Wilderman", "evw.png"_spr));
+        nm->addSender(Sender::create("glungus", "Glungus", "glungus.png"_spr));
         nm->addSender(Sender::create("gordon", "gordon", "gordon.png"_spr));
         nm->addSender(Sender::create("homelander", "Homelander", "homelander.png"_spr));
         nm->addSender(Sender::create("joe", "joe", "joe.png"_spr));
@@ -22,7 +24,48 @@ $on_mod(Loaded) {
         nm->addSender(Sender::create("miku", "Miku..?", "miku.png"_spr));
         nm->addSender(Sender::create("patrice", "patrice", "patrice.png"_spr));
         nm->addSender(Sender::create("soggy", "Lil' Ole' Soggy", "soggy.png"_spr));
+        nm->addSender(Sender::create("squid", "squid guy", "squid.png"_spr));
         nm->addSender(Sender::create("yellow", "The Yellow One.", "yellow.png"_spr));
+
+        nm->add(
+            Notif::create("hi")
+                .setTitle("Messages")
+                .setMessage("hi")
+                .setButtons(
+                    {
+                        {
+                            .text = "hello",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "bye",
+                            .isOk = true,
+                        },
+                    }));
+
+        nm->add(
+            Notif::create("fridge")
+                .setTitle("Security Alert")
+                .setMessage("A login has been detected for your smart fridge.")
+                .setButtons(
+                    {
+                        {
+                            .text = "uh",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "self-destruct!",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "factory reset!",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "play tidal wave",
+                            .isOk = true,
+                        },
+                    }));
 
         nm->add(
             Notif::create("clogged")
@@ -238,6 +281,58 @@ $on_mod(Loaded) {
                         {
                             .text = "NOOOO",
                             .isOk = true,
+                        },
+                    }));
+
+        nm->add(
+            Notif::create("browser_history")
+                .setTitle("E-mail")
+                .setMessage("hi i accidentally sent ur search history in the globed discord... we still cool?")
+                .setButtons(
+                    {
+                        {
+                            .text = "no",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "no",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "hell no",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "get out",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "i'm so done...",
+                            .isOk = false,
+                        },
+                    }));
+
+        nm->add(
+            Notif::create("local_weather")
+                .setTitle("Weather")
+                .setMessage("Local forecast: Moderate chance of a new Geometry Dash update.")
+                .setButtons(
+                    {
+                        {
+                            .text = "Ok",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "Okay",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "how do i reply to this...",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "the impossible game!",
+                            .isOk = false,
                         },
                     }));
     };

@@ -197,7 +197,7 @@ $on_game(Loaded) {
             AN_HORRIBLE_ID,
             "Notification Spam",
             "Enable the annoying notification spam during gameplay.",
-            "Annoying Notifications",
+            "Notification Hell",
             SillyTier::High,
             true,
         };

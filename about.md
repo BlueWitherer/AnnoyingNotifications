@@ -1,4 +1,4 @@
-# ![📧](frame:accountBtn_messages_001.png?scale=0.5) Annoying Notifications...
+# ![📧](frame:accountBtn_messages_001.png?scale=0.5) Notification Hell
 **Check your notification feed or lose!**
 
 *by [Cheeseworks](user:6408873)!*
@@ -24,7 +24,7 @@ Sometimes, to find the right response to continue playing, you'll have to use so
 Ah, alrighty... You can <cy>disable *Challenge Mode* in this mod's settings</c> if you only wish to have notifications show up without consequences!
 
 ### Live Toggling
-You can disable the chaotic notifications during gameplay if you have [Horrible Menu](mod:cubicstudios.horriblemenu) installed! Find Annoying Notifications's options in their menu.
+You can disable the chaotic notifications during gameplay if you have [Horrible Menu](mod:cubicstudios.horriblemenu) installed! Find Notification Hell's options in their menu.
 
 <mod:cubicstudios.horriblemenu>
 
