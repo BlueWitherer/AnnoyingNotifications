@@ -6,8 +6,6 @@
 
 #include <Geode/Geode.hpp>
 
-#include <Geode/ui/Button.hpp>
-
 using namespace geode::prelude;
 using namespace cw::notifs;
 
@@ -16,7 +14,7 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
 
     setID(notif->getID());
     setAnchorPoint({0.5, 0.5});
-    setContentSize({255.f, withBtns ? 75.f : 65.f});
+    setContentSize({255.f, withBtns ? 87.5f : 75.f});
 
     auto notifMsg = CCLabelBMFont::create(notif->getMessage().c_str(), "chatFont.fnt", getScaledContentWidth() - 65.f);
     notifMsg->setID("notif-msg");
@@ -37,13 +35,19 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
         btnContainer->setID("btn-container");
         btnContainer->setAnchorPoint({0.5, 0});
         btnContainer->setContentSize({getScaledContentWidth() * 0.925f, 50.f});
-        btnContainer->setPosition({getScaledContentWidth() / 2.f, 15.f});
+        btnContainer->setPosition({getScaledContentWidth() / 2.f, 20.f});
         btnContainer->setLayout(btnContainerLayout);
 
-        for (auto const& btn : notif->getButtons()) {
+        std::vector<Notif::Button> btns;
+        btns.reserve(notif->getButtons().size());
+        for (auto btn : notif->getButtons()) btns.push_back(btn);
+
+        utils::random::shuffle(btns);
+
+        for (auto const& btn : btns) {
             auto btnNode = Button::createWithNode(
                 ButtonSprite::create(btn.text.c_str(), "geode.loader/mdFontB.fnt", "GJ_button_05.png"),
-                [this, &btn](auto) {
+                [this, btn](auto) {
                     unscheduleUpdate();
                     if (m_callback) m_callback(btn.isOk);
                 });
@@ -62,7 +66,7 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
         m_countdown->setID("countdown");
         m_countdown->setScale(0.75f);
         m_countdown->setAnchorPoint({0.5, 0.5});
-        m_countdown->setPosition({getScaledContentWidth() / 2.f, 7.5f});
+        m_countdown->setPosition({getScaledContentWidth() / 2.f, 12.5f});
 
         addChild(m_countdown, 1);
 
@@ -74,6 +78,7 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
         {
             .opacity = 255,
             .sidePadding = 1.25f,
+            .verticalPadding = 0.f,
             .texture = "GJ_square02.png",
             .zOrder = -1,
         });
@@ -81,14 +86,13 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
     auto notifTitle = CCLabelBMFont::create(notif->getTitle().c_str(), "goldFont.fnt");
     notifTitle->setID("notif-title");
     notifTitle->setScale(0.5f);
-    notifTitle->setAnchorPoint({0.5, 0.5});
-    notifTitle->setPosition({getScaledContentWidth() / 2.f, getScaledContentHeight() - (notifTitle->getScaledContentHeight() * 0.75f)});
+    notifTitle->setPosition({getScaledContentWidth() / 2.f, getScaledContentHeight() - (notifTitle->getScaledContentHeight() * 0.875f)});
 
     addChild(notifTitle, 1);
 
     auto senderIcon = CCSprite::createWithSpriteFrameName(notif->getSender().getIcon().c_str());
     senderIcon->setID("sender-icon");
-    senderIcon->setPosition({32.5f, getScaledContentHeight() - 47.5f});
+    senderIcon->setPosition({32.5f, getScaledContentHeight() - 50.f});
 
     cue::rescaleToMatch(senderIcon, 42.5f);
 

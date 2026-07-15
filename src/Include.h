@@ -2,6 +2,8 @@
 
 #include <API.h>
 
+#include <Geode/ui/Button.hpp>
+
 #define HIGHEST_Z cocos2d::CCScene::get()->getHighestChildZ() + 1
 
 #define AN_HORRIBLE_ID "enable"_spr

@@ -12,13 +12,17 @@ using namespace horrible;
 $on_mod(Loaded) {
     if (auto nm = NotifManager::get()) {
         nm->addSender(Sender::create("durr", "durr", "durr.png"_spr));
+        nm->addSender(Sender::create("evw", "Mr. Wilderman", "evw.png"_spr));
         nm->addSender(Sender::create("gordon", "gordon", "gordon.png"_spr));
         nm->addSender(Sender::create("homelander", "Homelander", "homelander.png"_spr));
         nm->addSender(Sender::create("joe", "joe", "joe.png"_spr));
         nm->addSender(Sender::create("kane", "Kane Parsons", "kane.png"_spr));
         nm->addSender(Sender::create("kermit", "Kermit", "kermit.png"_spr));
         nm->addSender(Sender::create("michael", "Michael Sphere", "michael.png"_spr));
+        nm->addSender(Sender::create("miku", "Miku..?", "miku.png"_spr));
         nm->addSender(Sender::create("patrice", "patrice", "patrice.png"_spr));
+        nm->addSender(Sender::create("soggy", "Lil' Ole' Soggy", "soggy.png"_spr));
+        nm->addSender(Sender::create("yellow", "The Yellow One.", "yellow.png"_spr));
 
         nm->add(
             Notif::create("clogged")
@@ -85,6 +89,10 @@ $on_mod(Loaded) {
                         },
                         {
                             .text = "no",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "maybe...",
                             .isOk = true,
                         },
                         {
