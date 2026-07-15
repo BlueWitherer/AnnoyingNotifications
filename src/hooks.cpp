@@ -75,7 +75,7 @@ class $modify(NotifPlayLayer, PlayLayer) {
         if (auto fmod = FMODAudioEngine::sharedEngine()) (void)fmod->playEffectAsync("chest07.ogg");
 
         m_fields->feed->addNotif(notif, [this](bool correct) {
-            correct ? log::debug("Answered notification correctly") : resetLevelFromStart();
+            if (!correct) resetLevelFromStart();
         });
     };
 

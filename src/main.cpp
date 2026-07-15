@@ -84,7 +84,7 @@ $on_mod(Loaded) {
                             .isOk = false,
                         },
                         {
-                            .text = "Sir, this is a Wendy's",
+                            .text = "this is a Wendy's.",
                             .isOk = true,
                         },
                         {

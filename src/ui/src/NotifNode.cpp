@@ -54,7 +54,7 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
                     unscheduleUpdate();
                     if (m_callback) m_callback(btn.isOk);
                 });
-            btnNode->setScale(0.75f);
+            btnNode->setScale(0.875f);
 
             btnContainer->addChild(btnNode);
         };

@@ -16,7 +16,7 @@ bool NotifFeed::init(float height) {
 
     setID("notif-feed"_spr);
     setAnchorPoint({1, 0.5});
-    setContentSize({225.f, height});
+    setContentSize({200.f, height});
 
     // yea ik whatever man
     m_mainLayer = CCLayer::create();
@@ -93,7 +93,7 @@ bool NotifFeed::init(float height) {
 
 void NotifFeed::addNotif(const Notif* notif, Callback&& cb) {
     auto node = NotifNode::create(notif);
-    node->setScale(0.75f);
+    node->setScale(0.65f);
 
     node->setCallback([this, node, cb = std::move(cb)](bool correct) {
         cb(correct);
