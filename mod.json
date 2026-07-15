@@ -45,7 +45,7 @@
         "always-on": {
             "type": "bool",
             "name": "Always On",
-            "description": "Keep the spammy notifications always on outside of regular gameplay.\n\n> ![**<!>**](frame:geode.loader/info-warning.png?scale=0.375) <cy>*If you have [Horrible Menu](mod:cubicstudios.horriblemenu) enabled, this setting will require you to enable the *Spam Notifications* option.*</c>\n\n<mod:cubicstudios.horriblemenu>",
+            "description": "Keep the spammy notifications always on outside of regular gameplay.\n\n> ![**<!>**](frame:geode.loader/info-warning.png?scale=0.375) <cy>*If you have [Horrible Menu](mod:cubicstudios.horriblemenu) enabled, this setting will require you to enable the 'Spam Notifications' option.*</c>\n\n<mod:cubicstudios.horriblemenu>",
             "default": false
         },
         "challenge-mode": {

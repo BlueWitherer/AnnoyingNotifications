@@ -156,9 +156,8 @@ protected:
     };
 
 public:
-    static GlobalNotifDirector* get() {
+    static GlobalNotifDirector* get() noexcept {
         static auto inst = new (std::nothrow) GlobalNotifDirector();
-        inst->retain();
         return inst;
     };
 
@@ -173,7 +172,7 @@ public:
     };
 };
 
-namespace cw {  // cw here again cuz we need to wait for gnd class decl apparently
+namespace cw {  // decl namespace again cuz we need to wait for gnd class decl apparently.....
     static void toggleGlobalNotifs(bool on) {
         if (auto gnd = GlobalNotifDirector::get()) on ? gnd->start() : gnd->stop();
         log::debug("Persistent notifications {}", on ? "ENABLED" : "DISBALED");
