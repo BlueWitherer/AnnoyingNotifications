@@ -195,7 +195,7 @@ $on_game(Loaded) {
     if (Loader::get()->isModLoaded("cubicstudios.horriblemenu")) {
         auto const opt = OptionV2{
             AN_HORRIBLE_ID,
-            "Notification Spam",
+            "Spam Notifications",
             "Enable the annoying notification spam during gameplay.",
             "Notification Hell",
             SillyTier::High,
