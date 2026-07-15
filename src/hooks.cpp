@@ -32,7 +32,7 @@ class $modify(NotifPlayLayer, PlayLayer) {
 
         PlatformToolbox::showCursor();
 
-        scheduleOnce(schedule_selector(NotifPlayLayer::showNewNotif), rng::generate(1.25f, 5.f));
+        scheduleOnce(schedule_selector(NotifPlayLayer::showNewNotif), rng::generate(0.125f, 6.25f));
     };
 
     void setupHasCompleted() {
@@ -83,7 +83,7 @@ class $modify(NotifPlayLayer, PlayLayer) {
         cue::resetNode(sender);
 
         queueInMainThread([self = WeakRef(this)]() {
-            if (auto s = self.lock()) s->scheduleOnce(schedule_selector(NotifPlayLayer::showNewNotif), rng::generate(1.25f, 8.75f));
+            if (auto s = self.lock()) s->scheduleOnce(schedule_selector(NotifPlayLayer::showNewNotif), rng::generate(0.125f, 6.25f));
         });
     };
 };

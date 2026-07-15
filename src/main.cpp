@@ -80,7 +80,7 @@ $on_mod(Loaded) {
                 .setButtons(
                     {
                         {
-                            .text = "gtfo my room",
+                            .text = "gtfo of my room!!!",
                             .isOk = false,
                         },
                         {
@@ -96,7 +96,7 @@ $on_mod(Loaded) {
                             .isOk = true,
                         },
                         {
-                            .text = "i have diarrhea",
+                            .text = "let me pee in peace...",
                             .isOk = true,
                         },
                     }));
@@ -131,7 +131,7 @@ $on_mod(Loaded) {
 
         nm->add(
             Notif::create("shoutout")
-                .setTitle("Email")
+                .setTitle("E-mail")
                 .setMessage("brooo i lov yur youube chanel can i have a shoutout")
                 .setButtons(
                     {
@@ -181,6 +181,62 @@ $on_mod(Loaded) {
                         },
                         {
                             .text = "yeag",
+                            .isOk = true,
+                        },
+                    }));
+
+        nm->add(
+            Notif::create("yt_intro")
+                .setTitle("YouTube")
+                .setMessage("what's up everyone welcome back to...")
+                .setButtons(
+                    {
+                        {
+                            .text = "geometry dash!!!",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "the recent tab!!!",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "minecraft",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "the impossible game!",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "osu",
+                            .isOk = false,
+                        },
+                    }));
+
+        nm->add(
+            Notif::create("whatsapp_scam")
+                .setTitle("Phone")
+                .setMessage("I have something important to tell you. Can you add me on WhatsApp?")
+                .setButtons(
+                    {
+                        {
+                            .text = "Ok",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "Sure!",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "whar",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "will there be cake",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "NOOOO",
                             .isOk = true,
                         },
                     }));

@@ -14,9 +14,9 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
 
     setID(notif->getID());
     setAnchorPoint({0.5, 0.5});
-    setContentSize({255.f, withBtns ? 87.5f : 75.f});
+    setContentSize({255.f, withBtns ? 82.5f : 70.f});
 
-    auto notifMsg = CCLabelBMFont::create(notif->getMessage().c_str(), "chatFont.fnt", getScaledContentWidth() - 65.f);
+    auto notifMsg = CCLabelBMFont::create(notif->getMessage().c_str(), "chatFont.fnt", getScaledContentWidth() - 75.f);
     notifMsg->setID("notif-msg");
     notifMsg->setScale(0.875f);
     notifMsg->setAnchorPoint({0, 1});
@@ -26,7 +26,7 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
     setContentHeight(getScaledContentHeight() + notifMsg->getScaledContentHeight());
 
     if (withBtns) {
-        m_maxTime = rng::generate(8.75f, 17.5f);
+        m_maxTime = rng::generate(12.5f, 25.f);
         m_time = m_maxTime;
 
         auto btnContainerLayout = RowLayout::create()
