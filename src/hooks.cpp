@@ -107,17 +107,21 @@ class $modify(NotifPlayLayer, PlayLayer) {
 
         auto notif = std::move(notifRes).unwrap();
 
-        auto notifNode = cw::showNotif(notif, m_uiLayer, [this](NotifNode* sender) { cleanNotif(sender); });
-
-        notifNode->setCallback([this, notifNode](bool correct) {
-            if (notifNode) notifNode->removeFromParent();
-            if (!correct) resetLevelFromStart();
-        });
+        cw::showNotif(notif, m_uiLayer, [this](NotifNode* sender) { cleanNotif(sender); });
 
         auto f = m_fields.self();
 
         if (f->feed) f->feed->addNotif(notif, [this](bool correct) {
-            if (!correct) resetLevelFromStart();
+            auto fmod = FMODAudioEngine::sharedEngine();
+
+            fmod->playEffectAsync("chestClick.ogg");
+
+            if (!correct) {
+                resetLevelFromStart();
+
+                Notification::create("Bad response!", NotificationIcon::Error, 0.875f)->show();
+                fmod->playEffectAsync("explode_11.ogg");
+            };
         });
     };
 
