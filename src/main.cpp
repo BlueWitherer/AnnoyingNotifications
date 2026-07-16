@@ -328,11 +328,11 @@ $on_mod(Loaded) {
                         },
                         {
                             .text = "how do i reply to this...",
-                            .isOk = false,
+                            .isOk = true,
                         },
                         {
                             .text = "the impossible game!",
-                            .isOk = false,
+                            .isOk = true,
                         },
                     }));
     };

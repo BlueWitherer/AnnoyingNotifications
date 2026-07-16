@@ -13,7 +13,7 @@ Check your notification feed or lose!
 ---
 
 ## About
-A totally awesome mod that spams notifications while playing levels.
+A totally awesome joke mod that spams notifications while playing levels.
 
 ---
 
