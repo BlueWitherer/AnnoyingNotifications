@@ -30,4 +30,9 @@ You can disable the chaotic notifications during gameplay if you have [Horrible 
 
 ---
 
+### Credits
+- **[Uproxide](user:25397826)**: '*The Yellow One*' sprite from [More Difficulties](mod:uproxide.more_difficulties)
+
+---
+
 ![🗨️](frame:gj_discordIcon_001.png?scale=0.375) **If you need help, join my [support Discord server](https://www.dsc.gg/cheeseworks) and ask! :)**

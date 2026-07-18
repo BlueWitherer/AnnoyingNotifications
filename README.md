@@ -33,6 +33,11 @@ You can disable the chaotic notifications during gameplay if you have [Horrible 
 
 ---
 
+### Credits
+- **[Uproxide](https://www.github.com/Uproxide/)**: '*The Yellow One*' sprite from [More Difficulties](https://geode-sdk.org/mods/uproxide.more_difficulties)
+
+---
+
 ![preview](previews/preview-1.png)
 ![preview](previews/preview-2.png)
 

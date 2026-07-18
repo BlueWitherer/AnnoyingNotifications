@@ -17,7 +17,7 @@ static std::vector<std::weak_ptr<Hook>> g_notifHooks;  // Array of registered no
 static bool g_horribleEnabled = true;                  // cuz geode event apis are acting gay...
 
 namespace cw {
-    static NotifNode* showNotif(const Notif* notif, CCNode* to, CopyableFunction<void(NotifNode*)>&& finished) {
+    static void showNotif(const Notif* notif, CCNode* to, CopyableFunction<void(NotifNode*)>&& finished) {
         auto const size = CCDirector::sharedDirector()->getWinSize();
 
         auto x = size.width / 2.f;
@@ -44,8 +44,6 @@ namespace cw {
                 nullptr));
 
         if (auto fmod = FMODAudioEngine::sharedEngine()) (void)fmod->playEffectAsync("chest07.ogg");
-
-        return notifNode;
     };
 };
 
@@ -151,7 +149,7 @@ protected:
 
         auto notif = std::move(notifRes).unwrap();
 
-        auto notifNode = cw::showNotif(notif, OverlayManager::get(), [this](NotifNode* sender) { cleanNotif(sender); });
+        cw::showNotif(notif, OverlayManager::get(), [this](NotifNode* sender) { cleanNotif(sender); });
     };
 
     void cleanNotif(CCNode* sender) {
@@ -160,8 +158,8 @@ protected:
     };
 
 public:
-    static GlobalNotifDirector* get() noexcept {
-        static auto inst = new (std::nothrow) GlobalNotifDirector();
+    static GlobalNotifDirector& get() noexcept {
+        static GlobalNotifDirector inst;
         return inst;
     };
 
@@ -178,7 +176,12 @@ public:
 
 namespace cw {  // decl namespace again cuz we need to wait for gnd class decl apparently.....
     static void toggleGlobalNotifs(bool on) {
-        if (auto gnd = GlobalNotifDirector::get()) on ? gnd->start() : gnd->stop();
+        auto& gnd = GlobalNotifDirector::get();
+
+        on
+            ? gnd.start()
+            : gnd.stop();
+
         log::debug("Persistent notifications {}", on ? "ENABLED" : "DISBALED");
     };
 };
