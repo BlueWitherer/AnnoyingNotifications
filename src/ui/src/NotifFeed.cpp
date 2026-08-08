@@ -141,6 +141,11 @@ void NotifFeed::addNotif(const Notif* notif, Callback&& cb) {
     updateCountLabel();
 };
 
+void NotifFeed::clearNotifs() {
+    m_list->m_contentLayer->removeAllChildren();
+    updateCountLabel();
+};
+
 NotifFeed* NotifFeed::create(float height) {
     auto ret = new NotifFeed();
     if (ret->init(height)) {

@@ -11,20 +11,35 @@ using namespace horrible;
 // yeah big ass source file
 $on_mod(Loaded) {
     if (auto nm = NotifManager::get()) {
+        nm->addSender(Sender::create("among", "aomong", "aomong.png"_spr));
+        nm->addSender(Sender::create("bfdi", "BFDI Mouth", "bfdi.png"_spr));
         nm->addSender(Sender::create("boo", "Boo", "boo.png"_spr));
+        nm->addSender(Sender::create("borb", "Borb", "borb.png"_spr));
+        nm->addSender(Sender::create("david", "David", "david.png"_spr));
         nm->addSender(Sender::create("durr", "durr", "durr.png"_spr));
         nm->addSender(Sender::create("evw", "Mr. Wilderman", "evw.png"_spr));
         nm->addSender(Sender::create("glungus", "Glungus", "glungus.png"_spr));
         nm->addSender(Sender::create("gordon", "gordon", "gordon.png"_spr));
+        nm->addSender(Sender::create("happy", "Steam Happy", "happy.png"_spr));
+        nm->addSender(Sender::create("henry", "Henry.", "henry.png"_spr));
         nm->addSender(Sender::create("homelander", "Homelander", "homelander.png"_spr));
         nm->addSender(Sender::create("joe", "joe", "joe.png"_spr));
         nm->addSender(Sender::create("kane", "Kane Parsons", "kane.png"_spr));
         nm->addSender(Sender::create("kermit", "Kermit", "kermit.png"_spr));
+        nm->addSender(Sender::create("lobotomy", "Lobotomy", "lobotomy.png"_spr));
+        nm->addSender(Sender::create("markiplier", "mark", "mark.png"_spr));
         nm->addSender(Sender::create("michael", "Michael Sphere", "michael.png"_spr));
         nm->addSender(Sender::create("miku", "Miku..?", "miku.png"_spr));
         nm->addSender(Sender::create("patrice", "patrice", "patrice.png"_spr));
+        nm->addSender(Sender::create("roach", "dancin' roach", "roach.png"_spr));
+        nm->addSender(Sender::create("sammelot", "sam", "sammelot.png"_spr));
+        nm->addSender(Sender::create("smile", "Winning Smile.", "smile.png"_spr));
         nm->addSender(Sender::create("soggy", "Lil' Ole' Soggy", "soggy.png"_spr));
         nm->addSender(Sender::create("squid", "squid guy", "squid.png"_spr));
+        nm->addSender(Sender::create("takis", "Takis..?", "takis.png"_spr));
+        nm->addSender(Sender::create("tarsorado", "Tarsorado Demon", "tarsorado.png"_spr));
+        nm->addSender(Sender::create("tiger", "Curious Tiger", "tiger.png"_spr));
+        nm->addSender(Sender::create("vortrox", "diva youtuber", "vortrox.png"_spr));
         nm->addSender(Sender::create("yellow", "The Yellow One.", "yellow.png"_spr));
 
         nm->add(
@@ -74,7 +89,7 @@ $on_mod(Loaded) {
                 .setButtons(
                     {
                         {
-                            .text = "Who are you?",
+                            .text = "who are you",
                             .isOk = false,
                         },
                         {
@@ -85,6 +100,10 @@ $on_mod(Loaded) {
                         {
                             .text = "Leave me alone...",
                             .isOk = false,
+                        },
+                        {
+                            .text = "ugh",
+                            .isOk = true,
                         },
                     }));
 
@@ -332,6 +351,138 @@ $on_mod(Loaded) {
                         },
                         {
                             .text = "the impossible game!",
+                            .isOk = true,
+                        },
+                    }));
+
+        nm->add(
+            Notif::create("math_homework")
+                .setTitle("Calculator")
+                .setMessage("hey man what's 2 + 2? i need to know for my math homework")
+                .setButtons(
+                    {
+                        {
+                            .text = "what",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "4.",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "6...",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "fish!",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "Block",
+                            .isOk = true,
+                        },
+                    }));
+
+        nm->add(
+            Notif::create("geode_virus")
+                .setTitle("System")
+                .setMessage("ey man ur pc got a virus from geode i need ur credit card info to give a fix")
+                .setButtons(
+                    {
+                        {
+                            .text = "ok!",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "delete system32",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "rm -rf /",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "u can have this virus too",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "Block",
+                            .isOk = false,
+                        },
+                    }));
+
+        nm->add(
+            Notif::create("cheating")
+                .setTitle("Twitter")
+                .setMessage("Saw your completion for The Nightmare. Did you bot it..?")
+                .setButtons(
+                    {
+                        {
+                            .text = "yeah",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "nuh uh",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "i can explain...",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "caught",
+                            .isOk = false,
+                        },
+                    }));
+
+        nm->add(
+            Notif::create("music_pirata")
+                .setTitle("Spotify")
+                .setMessage("your account got slimed for downloading songs illegaly!!!")
+                .setButtons(
+                    {
+                        {
+                            .text = "download more",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "pirate ytm",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "i can explain...",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "caught",
+                            .isOk = false,
+                        },
+                    }));
+
+        nm->add(
+            Notif::create("bad_video")
+                .setTitle("YouTube")
+                .setMessage("Your video made me die of sadness. I will report you for this.")
+                .setButtons(
+                    {
+                        {
+                            .text = "no wait pls",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "i will delete it!",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "i must make an apology video...",
+                            .isOk = false,
+                        },
+                        {
+                            .text = "hide from channel",
+                            .isOk = true,
+                        },
+                        {
+                            .text = "ignore",
                             .isOk = true,
                         },
                     }));

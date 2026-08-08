@@ -99,6 +99,15 @@ class $modify(NotifPlayLayer, PlayLayer) {
         toggleAll(true);
     };
 
+    void levelComplete() {
+        PlayLayer::levelComplete();
+
+        auto f = m_fields.self();
+
+        if (f->feed) f->feed->clearNotifs();
+        setupSchedules(false);
+    };
+
     void showNewNotif(float) {
         auto notifRes = NotifManager::get()->getRandom();
         if (notifRes.isErr()) return;

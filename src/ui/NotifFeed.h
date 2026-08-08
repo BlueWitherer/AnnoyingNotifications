@@ -26,4 +26,6 @@ public:
     static NotifFeed* create(float height);
 
     void addNotif(const cw::notifs::Notif* notif, Callback&& cb);
+
+    void clearNotifs();
 };
