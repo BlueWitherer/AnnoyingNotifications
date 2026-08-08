@@ -13,7 +13,7 @@ A totally awesome joke mod that spams notifications while playing levels.
 ---
 
 ### Check Up On Them!
-<cg>Hilarious notifications</c> will be <cy>mercilessly filling your inbox and take up its space</c>. If it gets too full, you will get <cy>kicked out of the level</c>, so be sure you check on enough notifications in time to save yourself!
+<cg>Hilarious notifications</c> will be <cy>mercilessly filling your inbox</c>. You only have a limited amount of time to respond to notifications! <cr>Fail to respond in time, and you will get kicked out of the level</c>. Be sure you check on enough notifications in time to save yourself!
 
 To get rid of notifications, <cl>press the correct button</c> to reply! Depends on what the notification is about.
 
