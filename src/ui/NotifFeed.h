@@ -10,7 +10,7 @@ class NotifFeed final : public cocos2d::CCNode {
 private:
     geode::ScrollLayer* m_list = nullptr;
 
-    cocos2d::CCLabelBMFont* m_countLabel = nullptr;
+    geode::Label* m_countLabel = nullptr;
     cocos2d::CCSprite* m_countLabelBg = nullptr;
 
     cocos2d::CCNode* m_mainLayer = nullptr;

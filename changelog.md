@@ -1,3 +1,6 @@
+# v1.1.1 
+- Bumped Geode loader support to `v5.9.0`
+
 # v1.1.0 
 - Bumped Geode loader support to `v5.8.0`
 - Added 10 new notifications

@@ -36,7 +36,7 @@ bool NotifFeed::init(float height) {
             .zOrder = -1,
         });
 
-    auto label = CCLabelBMFont::create("Notifications", "goldFont.fnt");
+    auto label = Label::create("Notifications", "goldFont.fnt");
     label->setID("feed-label");
     label->setScale(0.5f);
     label->setPosition({m_mainLayer->getScaledContentWidth() / 2.f, m_mainLayer->getScaledContentHeight() - 15.f});
@@ -95,7 +95,7 @@ bool NotifFeed::init(float height) {
 
     addChild(m_countLabelBg, 1);
 
-    m_countLabel = CCLabelBMFont::create(utils::numToString(m_list->m_contentLayer->getChildrenCount()).c_str(), "geode.loader/mdFontB.fnt");
+    m_countLabel = Label::create(utils::numToString(m_list->m_contentLayer->getChildrenCount()).c_str(), "geode.loader/mdFontB.fnt");
     m_countLabel->setID("notif-counter");
     m_countLabel->setPosition(m_countLabelBg->getPosition());
     m_countLabel->setVisible(false);

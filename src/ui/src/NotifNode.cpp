@@ -15,9 +15,10 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
     setAnchorPoint({0.5, 0.5});
     setContentSize({255.f, withBtns ? 82.5f : 70.f});
 
-    auto notifMsg = CCLabelBMFont::create(notif->getMessage().c_str(), "chatFont.fnt", getScaledContentWidth() - 75.f);
+    auto notifMsg = Label::create(notif->getMessage().c_str(), "chatFont.fnt");
     notifMsg->setID("notif-msg");
     notifMsg->setScale(0.875f);
+    notifMsg->setMaxWidth(getScaledContentWidth() - 75.f);
     notifMsg->setAnchorPoint({0, 1});
 
     addChild(notifMsg, 9);
@@ -85,7 +86,7 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
             .zOrder = -1,
         });
 
-    auto notifTitle = CCLabelBMFont::create(notif->getTitle().c_str(), "goldFont.fnt");
+    auto notifTitle = Label::create(notif->getTitle().c_str(), "goldFont.fnt");
     notifTitle->setID("notif-title");
     notifTitle->setScale(0.5f);
     notifTitle->setPosition({getScaledContentWidth() / 2.f, getScaledContentHeight() - (notifTitle->getScaledContentHeight() * 0.875f)});
@@ -100,7 +101,7 @@ bool NotifNode::init(const Notif* notif, bool withBtns) {
 
     addChild(senderIcon, 9);
 
-    auto senderName = CCLabelBMFont::create(notif->getSender().getName().c_str(), "bigFont.fnt");
+    auto senderName = Label::create(notif->getSender().getName().c_str(), "bigFont.fnt");
     senderName->setID("sender-name");
     senderName->setScale(0.5f);
     senderName->setAnchorPoint({0, 0.5});
