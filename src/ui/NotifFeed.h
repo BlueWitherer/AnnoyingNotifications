@@ -13,7 +13,7 @@ private:
     geode::Label* m_countLabel = nullptr;
     cocos2d::CCSprite* m_countLabelBg = nullptr;
 
-    cocos2d::CCNode* m_mainLayer = nullptr;
+    cocos2d::CCLayer* m_mainLayer = nullptr;
 
     bool m_showing = true;
 
